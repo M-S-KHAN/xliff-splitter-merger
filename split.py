@@ -8,11 +8,11 @@ import os
 ###############################################################################
 
 
-def split():
+def split(utils_path, split_dir):
     
-    pickle_path = "originals.pkl"
-    merged_file_path = "merged.xliff"
-    split_files_base_directory = "./split_files"
+    pickle_path = f"{utils_path}/originals.pkl"
+    merged_file_path = f"{utils_path}/merged.xliff"
+    split_files_base_directory = split_dir
 
     file_to_read = open(pickle_path, "rb")
 

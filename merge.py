@@ -8,9 +8,9 @@ import os
 ###############################################################################
 
 
-def merge():
+def merge(path):
 
-    base_dir = "./xliff_files"
+    base_dir = path
     file_paths = []
 
     for path in glob.glob(f'{base_dir}/*'):
@@ -65,8 +65,8 @@ def merge():
         for pair in file_ref.items():
             if pair[0] == 'original':
                 original_temp = pair[1]
-
-        original_dict_items.append(file_path.split('/')[-1])
+        # import pdb; pdb.set_trace()
+        original_dict_items.append(file_path.split('\\')[-1])
 
         for element in root.iter():
 
@@ -87,10 +87,12 @@ def merge():
 
         originals_dict[i] = original_dict_items
 
+    if not os.path.exists('merged'):
+        os.makedirs('merged')
 
-    with open("merged.xliff", 'wb') as doc:
+    with open("merged/merged.xliff", 'wb') as doc:
         doc.write(etree.tostring(main_root, method='xml', encoding='utf-8', standalone=False, xml_declaration=True))
 
 
-    with open("originals.pkl", 'wb') as doc:
+    with open("merged/originals.pkl", 'wb') as doc:
         pickle.dump(originals_dict, doc)
