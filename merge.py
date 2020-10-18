@@ -66,11 +66,12 @@ def merge(path):
 
         root = tree.root
 
-        file_ref = root.find('file')
-        original_temp = None
-        for pair in file_ref.items():
-            if pair[0] == 'original':
-                original_temp = pair[1]
+        # file_ref = root.find('file')
+
+        # original_temp = None
+        # for pair in file_ref.items():
+        #     if pair[0] == 'original':
+        #         original_temp = pair[1]
         
         #Used to get the filename from the file path
         original_dict_items.append(file_path.split('\\')[-1])

@@ -48,7 +48,7 @@ def split(utils_path, split_dir):
                 for current_element in current_root.iter():
                     if current_element.tag == 'body':
                         #This loop will iterate over all the body elements that we retrived from the dictionary
-                        for j in range(object_count):
+                        for _ in range(object_count):
                             next_trans_object = trans_object_iterator.__next__()    #This will contain the reference of the 'body' element children and then traverse them one by one using next function
                             current_element.append(next_trans_object.__copy__())    #This will append all trans units or children of 'body element' that were removed during merging
 

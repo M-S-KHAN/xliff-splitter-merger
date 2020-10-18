@@ -1,0 +1,9 @@
+#######################################################
+#########           PATHS INF FILE            #########
+#########   (DO NOT CHANGE LINE POSITIONS)    #########
+#########   (DO NOT CHANGE NUMBER OF LINES)   #########
+#######################################################
+
+source_files_path = ./xliff_files
+merged_file_path = ./merged
+split_destination_path = ./splitted
