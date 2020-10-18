@@ -10,6 +10,8 @@ import os
 
 def split(utils_path, split_dir):
     
+    print("Processing...")
+
     pickle_path = f"{utils_path}/originals.pkl"
     merged_file_path = f"{utils_path}/merged.xliff"
     split_files_base_directory = split_dir
@@ -48,3 +50,5 @@ def split(utils_path, split_dir):
 
                 with open(os.path.join(split_files_base_directory, file_name), 'wb') as doc:
                     doc.write(etree.tostring(current_root, method='xml', encoding='utf-8', standalone=False, xml_declaration=True))
+
+    print("Done!")

@@ -10,6 +10,8 @@ import os
 
 def merge(path):
 
+    print("Processing...")
+
     base_dir = path
     file_paths = []
 
@@ -96,3 +98,6 @@ def merge(path):
 
     with open("merged/originals.pkl", 'wb') as doc:
         pickle.dump(originals_dict, doc)
+
+    print("Done!")
+

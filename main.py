@@ -21,14 +21,21 @@ if __name__ == "__main__":
 
         option = input()
 
-        if "1" in option:
-            print("Please give path of your xliff files directory (i.e ./xliff_files): ")
-            path = input()
-            merge(path)
+        try:
 
-        elif "2" in option:
-            print("Please give path of your merged file and pickle file directory (i.e ./merged): ")
-            path1 = input()
-            print("Please give path of your splitted files directory (i.e ./splitted): ")
-            path2 = input()
-            split(path1, path2)
+            if "1" in option:
+                print("Please give path of your xliff files directory (i.e ./xliff_files): ")
+                path = input()
+                merge(path)
+
+            elif "2" in option:
+                print("Please give path of your merged file and pickle file directory (i.e ./merged): ")
+                path1 = input()
+                print("Please give path of your splitted files directory (i.e ./splitted): ")
+                path2 = input()
+                split(path1, path2)
+
+        except Exception as e:
+            print(e)
+
+        print('\n')
