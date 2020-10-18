@@ -20,14 +20,13 @@ if __name__ == "__main__":
     path = path1 = path2 = None
 
     for i, line in enumerate(lines):
-        if i == 5:
+        if i == 6:
             path = line.split("= ")[-1][:-1]
-        elif i == 6:
-            path1 = line.split("= ")[-1][:-1]
         elif i == 7:
+            path1 = line.split("= ")[-1][:-1]
+        elif i == 8:
             path2 = line.split("= ")[-1][:-1]
-        
-
+    
     while option != '3':
 
         print("""******** Please select your action: ********
